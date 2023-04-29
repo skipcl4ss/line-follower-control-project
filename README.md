@@ -40,6 +40,7 @@ My teammates in the project were:
 * [Youssef Ehab](https://github.com/Youssef231001)
 * [Youssef Ashmawy](https://github.com/youssefashmawy)
 * [Omar Saleh](https://github.com/MrMariodude)
-* [Nour Eldein Karem]()
+* [Nour Eldein Karem](https://github.com/NourEl-dein)
+* Mohamed Fathy
 
 This project is licensed under the terms of the [MIT license](https://opensource.org/licenses/MIT).
