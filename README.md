@@ -4,15 +4,16 @@ A team project that we made last semester for the Control Components course wher
 ## Car Characteristics 
 The car has:
 * 3 Wheels
+    * 2 Regular Wheels
+    * 1 Steering Wheel
 * 3 Sensors
     * 2 IR Sensors
     * 1 Ultrasonic sensor
-* Arduino Nano
-* H-Bridge
-* Breadboard
+* 1 Arduino Nano
+* 1 H-Bridge
+* 1 Breadboard
 * 2 DC Motors
 * 3 Battery Cells (3.7V)
-* Steering Wheel
 
 ## Moving Mechanism
 The two DC motors are attached in the front side of the care, and the steering wheel is at the back.
