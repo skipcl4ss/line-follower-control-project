@@ -12,7 +12,7 @@ The car has:
 * Breadboard
 * 2 DC Motors
 * 3 Battery Cells (3.7V)
-* Steering wheel
+* Steering Wheel
 
 ## Moving Mechanism
 The two DC motors are attached in the front side of the care, and the steering wheel is at the back.
