@@ -3,7 +3,8 @@
 A team project that we made last semester for the Control Components course where we used an Arduino Nano to make a line-following car that also avoids an obstacle in the track.
 - - - -
 
-## Car Characteristics 
+## Car Characteristics
+
 The car has:
 * 3 Wheels
     * 2 Regular Wheels
@@ -32,6 +33,7 @@ Black | Left | Forward
 ### Obstacle Avoidance
 
 Due to lack of time, and since that the track had only one obstacle, we had to make the car avoid that obstacle with a hard-coded mechanism.When the ultrasonic sees an obstacle in range of 15 centimeters, the car turns left, turns right, and then adjusts itself to face forward and look at the track line.
+- - - -
 
 ## The Arduino type
 
