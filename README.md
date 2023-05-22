@@ -17,6 +17,7 @@ The car has:
 * 1 Breadboard
 * 2 DC Motors
 * 3 Battery Cells (3.7V)
+- - - -
 
 ## Moving Mechanism
 
@@ -35,7 +36,7 @@ Black | Left | Forward
 Due to lack of time, and since that the track had only one obstacle, we had to make the car avoid that obstacle with a hard-coded mechanism.When the ultrasonic sees an obstacle in range of 15 centimeters, the car turns left, turns right, and then adjusts itself to face forward and look at the track line.
 - - - -
 
-## The Arduino type
+## Arduino Type
 
 Arduino Nano microcontroller, with Arduino C++ as the programming language used.
 - - - -
