@@ -79,11 +79,11 @@ The same concept as ***moveRight()*** but this time the polarities of the *Forwa
 
 The code takes the return value of ***getDistance()*** and saves it in *distance*.  
 If the *distance*:
-* is less than or equal than 15cm:  
+* is less than or equal than 15 cm:  
 This means that the is an obstacle. In this case, the car will ***stop()*** for some time, turn left for a certain time, move forward for a little bit   of time, turn right for a certain time that is longer than that of turning left (the value of the delay is approximately double, to cancel out the effects of ***moveLeft()*** and in the end move in the right direction), and moves forward again for some time. 
-* is more than 15cm and only the left IR sensor ***seesBlack()*** line, the car will ***moveLeft()***.
-* is more than 15cm and only the right IR sensor ***seesBlack()*** line, the car will ***moveRight()***.
-* is more than 15cm and both sensors see the same color regardless of what it is, the car will ***moveForward()***.
+* is more than 15 cm and only the left IR sensor ***seesBlack()*** line, the car will ***moveLeft()***.
+* is more than 15 cm and only the right IR sensor ***seesBlack()*** line, the car will ***moveRight()***.
+* is more than 15 cm and both sensors see the same color regardless of what it is, the car will ***moveForward()***.
 - - - -
 
 ## Project in Action
@@ -92,8 +92,8 @@ This means that the is an obstacle. In this case, the car will ***stop()*** for 
 
 ***Note that in the following images, the above motor is the one connected to the right side of the car, the positive value means the Forward polarity is the HIGH one, and 1 in the IR sensor means black.***
 
-In case of distance measured being less than 15cm, the motors are turned off, making the car ***stop()***.  
-<img src="./media/stop.png" alt="A simulation of the case when the distance is less than 15cm" width=70% height=70%>
+In case of distance measured being less than 15 cm, the motors are turned off, making the car ***stop()***.  
+<img src="./media/stop.png" alt="A simulation of the case when the distance is less than 15 cm" width=70% height=70%>
 
 In case of both IR sensors seeing black, both motors operate in the same direction, making the car ***moveForward()***.  
 <img src="./media/forward-black.png" alt="A simulation of the case when both sensors see black" width=70% height=70%>
