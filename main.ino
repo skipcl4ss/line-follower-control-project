@@ -46,7 +46,8 @@ void loop()
     {
         // The values of the delays are a rough estimate and are bound to change when useing the car on the track
         // Stop for a second
-        Stop(1000);
+        stop();
+        delay(1000);
         // The car redirects itself left and moves for 675 milliseconds
         moveLeft();
         delay(250);
@@ -108,7 +109,7 @@ int getDistance()
  * @brief makes the car stop by setting both the direction and the enable pins to 0 for a certain amount of time
  * @param delayTime: the time in milliseconds that the car stops for
 */
-void Stop(int delayTime)
+void stop()
 {
   digitalWrite(leftForward, LOW);
   digitalWrite(leftBackward, LOW);
@@ -116,7 +117,6 @@ void Stop(int delayTime)
   digitalWrite(rightBackward, LOW);
   analogWrite(rightEnable, 0);
   analogWrite(leftEnable, 0);
-  delay(delayTime);
 }
 // @brief makes the car move forward by setting the forward pins to 1 and the enable pins to slightly different speeds to compensate for physical errors
 void moveForward()
