@@ -90,25 +90,31 @@ This means that the is an obstacle. In this case, the car will ***stop()*** for 
 ***Note that in the following images, the above motor is the one connected to the right side of the car, the positive value means the Forward polarity is the HIGH one, and 1 in the IR sensor means black.***
 
 In case of distance measured being less than 15cm, the motors are turned off, making the car ***stop()***.  
-<img src="./proteus%20simulation/stop.png" alt="A simulation of the case when the distance is less than 15cm" width=60% height=60%>
+<img src="./media/stop.png" alt="A simulation of the case when the distance is less than 15cm" width=70% height=70%>
 
 In case of both IR sensors seeing black, both motors operate in the same direction, making the car ***moveForward()***.  
-<img src="./proteus%20simulation/forward-black.png" alt="A simulation of the case when both sensors see black" width=60% height=60%>
+<img src="./media/forward-black.png" alt="A simulation of the case when both sensors see black" width=70% height=70%>
 
 In case of both sensors seeing white, both motors operate also in the same direction, making the car ***moveForward()***.  
-<img src="./proteus%20simulation/forward-white.png" alt="A simulation of the case when both sensors see white" width=60% height=60%>
+<img src="./media/forward-white.png" alt="A simulation of the case when both sensors see white" width=70% height=70%>
 
 In case of only the right sensor seeing black, the motors move in opposite directions where the left one is the one moving forward, making the car ***moveRight()***.  
-<img src="./proteus%20simulation/right.png" alt="A simulation of the case when the right sensor sees black" width=60% height=60%>
+<img src="./media/right.png" alt="A simulation of the case when the right sensor sees black" width=70% height=70%>
 
 In case of only the left sensor seeing black, the motors move in opposite directions where the right one is the one moving forward, making the car ***moveLeft()***.  
-<img src="./proteus%20simulation/left.png" alt="A simulation of the case when the left sensor sees black" width=60% height=60%>
+<img src="./media/left.png" alt="A simulation of the case when the left sensor sees black" width=70% height=70%>
 
 ### On Track
 
 This is a video of the car performing the [obstacle avoider](https://drive.google.com/file/d/1jDmy97NMDZjak8K8K72Sauh28hZ58uCh/view?usp=share_link) sequence, while this is for the [line follower](https://drive.google.com/file/d/1RhQ_pQmFq6AW0Ra22B073cs-qEciKafF/view?usp=share_link) part.
 
+The following are some images of the car:  
+<img src="./media/1.jpg" alt="An image of the front view of the car" width=30% height=30%>
+<img src="./media/2.jpg" alt="Another image of the front view of the car" width=30% height=30%>
+<img src="./media/4.jpg" alt="An image of of the top view of the car on the mat" width=30% height=30%>  
+<img src="./media/3.jpg" alt="An image of the side view of the car" width=60% height=60%>
 - - - -
+
 ## License
 It is worth noting that even though this is a team project, this repo contains my own version of the code that I edited to increase the readability and that the logic of the code is still the same.
 My teammates in the project were:
