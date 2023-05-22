@@ -60,30 +60,54 @@ Returns the reading of the IR sensor, where **1** is black and **0** is white.
 ***int getDistance()***  
 Sends an ultrasonic pulse, calculates *duration* of travel of this pulse in microseconds and multiplies it by a factor to get the distance centimeters. This factor is 0.034 cm/µs (speed of sound) and dividing by two gives us the *distance* half of that travelled back and forth.
 
-***void Stop(int delayTime)***  
+***void stop()***  
 Stops the car by giving the terminals of both motors the same voltage of **zero**, and reduces the speed to **zero**.
 
 ***void moveForward()***  
 Moves the car forward by giving the *Forward* pins a **HIGH** value and *Backward* pins a **LOW** one, and giving both enable pins the same-ish value, you may need to give them slightly different values to compensate for physical errors
 
 ***void moveRight()***  
-Moves the car right by giving the *Forward* pins a **HIGH** value and *Backward* pins a **LOW** one, but giving the *leftEnable* pin a noticably higher value than that of *rightEnable*. This makes the car drift to the right.
+Moves the car right by giving the *leftForward* pin a **HIGH** value and *leftBackward* pin a **LOW** one, while giving the *rightForward* pin a **LOW** value and *rightBackward* pin a **HIGH** one. This makes the car move clockwise roughly around its axis. Also we give the *leftEnable* pin a noticably higher value than that of *rightEnable* to compensate for physical errors.
 
 **void moveLeft()**  
-Moves the car right by giving the *Forward* pins a **HIGH** value and *Backward* pins a **LOW** one, but giving the *rightEnable* pin a noticably higher value than that of *leftEnable*. This makes the car drift to the left.
+The same concept as ***moveRight()*** but this time the polarities of the *Forward* and *Backward* terminals are reverted to move the car counterclockwise.
 
 ### Main Loop
 
 The code takes the return value of ***getDistance()*** and saves it in *distance*.  
 If the *distance*:
 * is less than or equal than 15cm:  
-This means that the is an obstacle. In this case, the car will stop, turn left for a certain time, move forward for a little bit   of time, turn right for a certain time that is longer than that of turning left (the value of the delay is approximately double,   to cancel out the effects of ***moveLeft()*** and in the end move in the right direction), and moves forward again for some time. 
+This means that the is an obstacle. In this case, the car will ***stop()*** for some time, turn left for a certain time, move forward for a little bit   of time, turn right for a certain time that is longer than that of turning left (the value of the delay is approximately double, to cancel out the effects of ***moveLeft()*** and in the end move in the right direction), and moves forward again for some time. 
 * is more than 15cm and only the left IR sensor ***seesBlack()*** line, the car will ***moveLeft()***.
 * is more than 15cm and only the right IR sensor ***seesBlack()*** line, the car will ***moveRight()***.
 * is more than 15cm and both sensors see the same color regardless of what it is, the car will ***moveForward()***.
+- - - -
 
 ## Project in Action
-**work in progress**
+
+### Simulation
+
+***Note that in the following images, the above motor is the one connected to the right side of the car, the positive value means the Forward polarity is the HIGH one, and 1 in the IR sensor means black.***
+
+In case of distance measured being less than 15cm, the motors are turned off, making the car ***stop()***.  
+<img src="./proteus%20simulation/stop.png" alt="A simulation of the case when the distance is less than 15cm" width=60% height=60%>
+
+In case of both IR sensors seeing black, both motors operate in the same direction, making the car ***moveForward()***.  
+<img src="./proteus%20simulation/forward-black.png" alt="A simulation of the case when both sensors see black" width=60% height=60%>
+
+In case of both sensors seeing white, both motors operate also in the same direction, making the car ***moveForward()***.  
+<img src="./proteus%20simulation/forward-white.png" alt="A simulation of the case when both sensors see white" width=60% height=60%>
+
+In case of only the right sensor seeing black, the motors move in opposite directions where the left one is the one moving forward, making the car ***moveRight()***.  
+<img src="./proteus%20simulation/right.png" alt="A simulation of the case when the right sensor sees black" width=60% height=60%>
+
+In case of only the left sensor seeing black, the motors move in opposite directions where the right one is the one moving forward, making the car ***moveLeft()***.  
+<img src="./proteus%20simulation/left.png" alt="A simulation of the case when the left sensor sees black" width=60% height=60%>
+
+### On Track
+
+This is a video of the car performing the [obstacle avoider](https://drive.google.com/file/d/1jDmy97NMDZjak8K8K72Sauh28hZ58uCh/view?usp=share_link) sequence, while this is for the [line follower](https://drive.google.com/file/d/1RhQ_pQmFq6AW0Ra22B073cs-qEciKafF/view?usp=share_link) part.
+
 - - - -
 ## License
 It is worth noting that even though this is a team project, this repo contains my own version of the code that I edited to increase the readability and that the logic of the code is still the same.
